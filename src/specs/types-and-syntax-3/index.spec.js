@@ -92,10 +92,10 @@ describe('arithmetic operators - types and syntax - 3', () => {
     });
 
     test('modulo', function(){
-        expect(a % 2).toEqual( /* YOUR ANSWER HERE */ );
-        expect(b % 2).toEqual( /* YOUR ANSWER HERE */ );
-        expect(a % b).toEqual( /* YOUR ANSWER HERE */ );
-        expect(b % a).toEqual( /* YOUR ANSWER HERE */ );
+        expect(a % 2).toEqual( 0);
+        expect(b % 2).toEqual( 1 );
+        expect(a % b).toEqual( 10 );
+        expect(b % a).toEqual( 3 );
     });
 })
 
@@ -103,17 +103,17 @@ describe('comparison operators - types and syntax - 3', () => {
     let a = "23", b = 23, c = 0, d = false, e = undefined;
 
     test('loose equality', function(){
-        expect(a == b).toEqual( /* YOUR ANSWER HERE */ );
-        expect(b == c).toEqual( /* YOUR ANSWER HERE */ );
-        expect(c == d).toEqual( /* YOUR ANSWER HERE */ );
-        expect(d == e).toEqual( /* YOUR ANSWER HERE */ );
+        expect(a == b).toEqual( true );
+        expect(b == c).toEqual(false );
+        expect(c == d).toEqual( true );
+        expect(d == e).toEqual( false );
     });
 
     test('strict equality', function(){
-        expect(a === b).toEqual( /* YOUR ANSWER HERE */ );
-        expect(b === c).toEqual( /* YOUR ANSWER HERE */ );
-        expect(c === d).toEqual( /* YOUR ANSWER HERE */ );
-        expect(d === e).toEqual( /* YOUR ANSWER HERE */ );
+        expect(a === b).toEqual( false );
+        expect(b === c).toEqual( false );
+        expect(c === d).toEqual( false);
+        expect(d === e).toEqual( false );
     });
 
     test('ternary operator (elvis)', function(){
@@ -125,15 +125,15 @@ describe('comparison operators - types and syntax - 3', () => {
             return a - b;
         }
 
-        expect(a ? true : false).toEqual( /* YOUR ANSWER HERE */ );
-        expect(b ? true : false).toEqual( /* YOUR ANSWER HERE */ );
-        expect(c ? true : false).toEqual( /* YOUR ANSWER HERE */ );
-        expect(d ? true : false).toEqual( /* YOUR ANSWER HERE */ );
+        expect(a ? true : false).toEqual( true );
+        expect(b ? true : false).toEqual( true );
+        expect(c ? true : false).toEqual( false );
+        expect(d ? true : false).toEqual( false );
 
-        expect(Add(5,10) > 10 ? true : false).toEqual( /* YOUR ANSWER HERE */ );
-        expect(Dec(5,10) > 10 ? true : false).toEqual( /* YOUR ANSWER HERE */ );
-        expect(Add(3,2) > 10 ? true : false).toEqual( /* YOUR ANSWER HERE */ );
-        expect(Dec(3,2) > 10 ? true : false).toEqual( /* YOUR ANSWER HERE */ );
+        expect(Add(5,10) > 10 ? true : false).toEqual( true );
+        expect(Dec(5,10) > 10 ? true : false).toEqual( false );
+        expect(Add(3,2) > 10 ? true : false).toEqual( false );
+        expect(Dec(3,2) > 10 ? true : false).toEqual( false );
     });
 })
 
@@ -141,23 +141,23 @@ describe('logical operators - types and syntax - 3', () => {
     let a = "38", b = 38, c = 0, d = false, e = undefined;
 
     test('logical or', function(){
-        expect(a || b).toEqual( /* YOUR ANSWER HERE */ );
-        expect(b || c).toEqual( /* YOUR ANSWER HERE */ );
-        expect(c || d).toEqual( /* YOUR ANSWER HERE */ );
-        expect(d || e).toEqual( /* YOUR ANSWER HERE */ );
+        expect(a || b).toEqual( "38" );
+        expect(b || c).toEqual( 38 );
+        expect(c || d).toEqual( false );
+        expect(d || e).toEqual( undefined );
     });
 
     test('logical and', function(){
-        expect(a && b).toEqual( /* YOUR ANSWER HERE */ );
-        expect(b && c).toEqual( /* YOUR ANSWER HERE */ );
-        expect(c && d).toEqual( /* YOUR ANSWER HERE */ );
-        expect(d && e).toEqual( /* YOUR ANSWER HERE */ );
+        expect(a && b).toEqual( 38 );
+        expect(b && c).toEqual( 0);
+        expect(c && d).toEqual( 0 );
+        expect(d && e).toEqual( false );
     });
 
     test('combined expressions', function(){
-        expect(a || b || c).toEqual( /* YOUR ANSWER HERE */ );
-        expect(b || c && d).toEqual( /* YOUR ANSWER HERE */ );
-        expect(c && d && e).toEqual( /* YOUR ANSWER HERE */ );
-        expect((d || e) && c || (a || b)).toEqual( /* YOUR ANSWER HERE */ );
+        expect(a || b || c).toEqual( "38");
+        expect(b || c && d).toEqual( 38 );
+        expect(c && d && e).toEqual( 0 );
+        expect((d || e) && c || (a || b)).toEqual( "38" );
     });
 })
