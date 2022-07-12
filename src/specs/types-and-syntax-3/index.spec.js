@@ -9,44 +9,46 @@ describe('coercion - types and syntax - 3', () => {
     test('explicit coercion', function(){
         let a = 42, b = 0, c = true, d = undefined, e = "John Lennon", f = [1,2,3], g = {name: "John"};
 
-        expect(typeof String(a)).toEqual( /* YOUR ANSWER HERE */ );
-        expect(typeof Boolean(a)).toEqual( /* YOUR ANSWER HERE */ );
-        expect(typeof Number(a)).toEqual( /* YOUR ANSWER HERE */ );
+        expect(typeof String(a)).toEqual( "string");
+        expect(typeof Boolean(a)).toEqual(  "boolean" );
+        
+        expect(typeof Number(a)).toEqual( "number" );
 
-        expect(typeof String(b)).toEqual( /* YOUR ANSWER HERE */ );
-        expect(typeof Boolean(b)).toEqual( /* YOUR ANSWER HERE */ );
-        expect(typeof Number(b)).toEqual( /* YOUR ANSWER HERE */ );
+        expect(typeof String(b)).toEqual( "string" );
+        expect(typeof Boolean(b)).toEqual( "boolean" );
+        expect(typeof Number(b)).toEqual( "number" );
 
-        expect(typeof String(c)).toEqual( /* YOUR ANSWER HERE */ );
-        expect(typeof Boolean(c)).toEqual( /* YOUR ANSWER HERE */ );
-        expect(typeof Number(c)).toEqual( /* YOUR ANSWER HERE */ );
+        expect(typeof String(c)).toEqual( "string" );
+        expect(typeof Boolean(c)).toEqual( "boolean");
+        expect(typeof Number(c)).toEqual( "number" );
 
-        expect(typeof String(d)).toEqual( /* YOUR ANSWER HERE */ );
-        expect(typeof Boolean(d)).toEqual( /* YOUR ANSWER HERE */ );
-        expect(typeof Number(d)).toEqual( /* YOUR ANSWER HERE */ );
+        expect(typeof String(d)).toEqual( "string");
+        expect(typeof Boolean(d)).toEqual( "boolean" );
+        expect(typeof Number(d)).toEqual( "number" );
 
-        expect(typeof String(e)).toEqual( /* YOUR ANSWER HERE */ );
-        expect(typeof Boolean(e)).toEqual( /* YOUR ANSWER HERE */ );
-        expect(typeof Number(e)).toEqual( /* YOUR ANSWER HERE */ );
+        expect(typeof String(e)).toEqual( "string" );
+        expect(typeof Boolean(e)).toEqual( "boolean" );
+        expect(typeof Number(e)).toEqual( "number");
 
-        expect(typeof String(f)).toEqual( /* YOUR ANSWER HERE */ );
-        expect(typeof Boolean(f)).toEqual( /* YOUR ANSWER HERE */ );
-        expect(typeof Number(f)).toEqual( /* YOUR ANSWER HERE */ );
+        expect(typeof String(f)).toEqual( "string" );
+        expect(typeof Boolean(f)).toEqual( "boolean" );
+        expect(typeof Number(f)).toEqual( "number" );
 
-        expect(typeof String(g)).toEqual( /* YOUR ANSWER HERE */ );
-        expect(typeof Boolean(g)).toEqual( /* YOUR ANSWER HERE */ );
-        expect(typeof Number(g)).toEqual( /* YOUR ANSWER HERE */ );
+        expect(typeof String(g)).toEqual( "string" );
+        expect(typeof Boolean(g)).toEqual( "boolean" );
+        expect(typeof Number(g)).toEqual( "number" );
+        
     });
     test('implicit coercion', function(){
-        expect(4 * "5").toEqual( /* YOUR ANSWER HERE */ );
-        expect(3 + "5" + 1).toEqual( /* YOUR ANSWER HERE */ );
-        expect("42" + 5).toEqual( /* YOUR ANSWER HERE */ );
-        expect(true + true).toEqual( /* YOUR ANSWER HERE */ );
-        expect("John" ? 4 : 1).toEqual( /* YOUR ANSWER HERE */ );
-        expect(undefined ? 4 : 1).toEqual( /* YOUR ANSWER HERE */ );
-        expect(1 + 2 + "1").toEqual( /* YOUR ANSWER HERE */ );
-        expect((1 + "2") + 1).toEqual( /* YOUR ANSWER HERE */ );
-        expect(4 * "Lennon").toEqual( /* YOUR ANSWER HERE */ );
+        expect(4 * "5").toEqual( 20 );
+        expect(3 + "5" + 1).toEqual( "351" );
+        expect("42" + 5).toEqual("425"  );
+        expect(true + true).toEqual( 2 );
+        expect("John" ? 4 : 1).toEqual( 4 );
+        expect(undefined ? 4 : 1).toEqual( 1 );
+        expect(1 + 2 + "1").toEqual( "31");
+        expect((1 + "2") + 1).toEqual( "121");
+        expect(4 * "Lennon").toEqual( NaN );
     });
 })
 
@@ -62,7 +64,7 @@ describe('arithmetic operators - types and syntax - 3', () => {
             return ++a;
         }
 
-        expect(Add(a)).toEqual( /* YOUR ANSWER HERE */ );
+        expect(Add(a)).toEqual( 11 );
     });
 
     test('suffixed incrementation', function(){
@@ -70,7 +72,7 @@ describe('arithmetic operators - types and syntax - 3', () => {
             return a++;
         }
 
-        expect(Add(a)).toEqual( /* YOUR ANSWER HERE */ );
+        expect(Add(a)).toEqual( 10 );
     });
 
     test('prefixed decrementation', function(){
@@ -78,7 +80,7 @@ describe('arithmetic operators - types and syntax - 3', () => {
             return --a;
         }
 
-        expect(Dec(a)).toEqual( /* YOUR ANSWER HERE */ );
+        expect(Dec(a)).toEqual( 9 );
     });
 
     test('suffixed decrementation', function(){
@@ -86,7 +88,7 @@ describe('arithmetic operators - types and syntax - 3', () => {
             return a--;
         }
 
-        expect(Dec(a)).toEqual( /* YOUR ANSWER HERE */ );
+        expect(Dec(a)).toEqual( 10 );
     });
 
     test('modulo', function(){
